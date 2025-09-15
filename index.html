@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Xu Hướng Bàn Làm Việc Di Động</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 380px;
+            }
+        }
+        .flowchart-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-height: 100px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #118AB2;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 768px) {
+            .flowchart-arrow {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body class="text-[#073B4C]">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#118AB2] mb-2">Xu Hướng Không Gian Làm Việc Linh Hoạt</h1>
+            <p class="text-lg md:text-xl text-[#073B4C]">Phân tích chi tiết về dòng sản phẩm bàn làm việc di động</p>
+        </header>
+
+        <div class="text-center mb-12">
+            <a href="https://noithatluongson.com.vn/ban-lam-viec-di-dong/" target="_blank" rel="noopener noreferrer" class="bg-[#06D6A0] text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-[#05b389] transition-colors duration-300">
+                Khám Phá Thông Tin Các Mẫu Bàn
+            </a>
+        </div>
+
+        <main class="space-y-12">
+            
+            <section id="overview" class="bg-white rounded-lg shadow-lg p-6 md:p-8 text-center">
+                <h2 class="text-2xl font-bold mb-4 text-[#118AB2]">Nhu Cầu Thiết Yếu Của Lối Sống Hiện Đại</h2>
+                <p class="max-w-3xl mx-auto mb-6">Trong bối cảnh không gian sống ngày càng thu hẹp và mô hình làm việc tại nhà trở nên phổ biến, các giải pháp nội thất thông minh, đặc biệt là bàn làm việc di động, đã trở thành một phần không thể thiếu.</p>
+                <div class="bg-[#FFD166] text-[#073B4C] p-8 rounded-lg inline-flex flex-col items-center">
+                    <span class="text-6xl md:text-7xl font-bold">75%</span>
+                    <span class="text-lg mt-2">Người dùng tìm kiếm giải pháp nội thất<br>đa năng và tiết kiệm diện tích.</span>
+                </div>
+            </section>
+
+            <section id="types" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-center mb-2 text-[#118AB2]">Sự Đa Dạng Trong Thiết Kế Sản Phẩm</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Bàn làm việc di động được phân loại dựa trên nhiều tiêu chí khác nhau, từ kiểu dáng chân bàn cho đến các tính năng tích hợp, đáp ứng mọi nhu cầu sử dụng của khách hàng.</p>
+                <div class="chart-container">
+                    <canvas id="productTypesChart"></canvas>
+                </div>
+            </section>
+
+            <section id="materials" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-center mb-8 text-[#118AB2]">Cấu Trúc Vật Liệu Bền Bỉ và Chất Lượng</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold text-center mb-4">Vật Liệu Mặt Bàn</h3>
+                        <p class="text-center mb-4">Sự kết hợp giữa gỗ công nghiệp cao cấp và lớp phủ Melamine tạo nên bề mặt chống trầy xước, chống thấm và dễ dàng vệ sinh, đảm bảo độ bền đẹp theo thời gian.</p>
+                        <div class="chart-container h-64 md:h-80">
+                            <canvas id="desktopMaterialChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-center mb-4">Vật Liệu Khung Chân</h3>
+                        <p class="text-center mb-4">Khung chân bằng sắt được xử lý bằng công nghệ sơn tĩnh điện không chỉ mang lại vẻ ngoài hiện đại mà còn giúp chống gỉ sét, tăng cường khả năng chịu lực và độ ổn định.</p>
+                        <div class="chart-container h-64 md:h-80">
+                            <canvas id="frameMaterialChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="advantages" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-center mb-8 text-[#118AB2]">Ba Lợi Ích Vượt Trội</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="text-5xl mb-4">💡</div>
+                        <h3 class="text-xl font-semibold mb-2">Thiết Kế Hiện Đại</h3>
+                        <p>Kiểu dáng sáng tạo, trẻ trung, phù hợp với xu hướng nội thất tối giản và thông minh, dễ dàng hòa hợp với nhiều không gian sống.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="text-5xl mb-4">🏠</div>
+                        <h3 class="text-xl font-semibold mb-2">Tối Ưu Diện Tích</h3>
+                        <p>Khả năng di chuyển linh hoạt và có thể gấp gọn khi không sử dụng giúp giải phóng không gian hiệu quả, lý tưởng cho căn hộ nhỏ.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="text-5xl mb-4">💪</div>
+                        <h3 class="text-xl font-semibold mb-2">Độ Bền Cao</h3>
+                        <p>Cam kết chất lượng thông qua việc lựa chọn vật liệu cao cấp, đảm bảo sản phẩm có khả năng chịu lực tốt và thời gian sử dụng lâu dài.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="guide" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <h2 class="text-2xl font-bold text-center mb-8 text-[#118AB2]">Quy Trình Lựa Chọn Bàn Làm Việc Hoàn Hảo</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-0 items-center">
+                     <div class="flowchart-step bg-[#FFD166] text-[#073B4C]">
+                        <div>
+                            <div class="font-bold text-lg">1. Đo Đạc Không Gian</div>
+                            <p class="text-sm">Xác định vị trí và diện tích bạn có để đảm bảo kích thước bàn phù hợp.</p>
+                        </div>
+                     </div>
+                     <div class="flowchart-arrow">➜</div>
+                     <div class="flowchart-step bg-[#06D6A0] text-white">
+                        <div>
+                            <div class="font-bold text-lg">2. Xác Định Nhu Cầu</div>
+                            <p class="text-sm">Bạn cần bàn để làm gì? Lưu trữ nhiều, có thể điều chỉnh hay đơn giản?</p>
+                        </div>
+                     </div>
+                     <div class="flowchart-arrow">➜</div>
+                     <div class="flowchart-step bg-[#FF6B6B] text-white">
+                        <div>
+                             <div class="font-bold text-lg">3. Lựa Chọn Kiểu Dáng</div>
+                            <p class="text-sm">Chọn thiết kế và màu sắc hài hòa với phong cách nội thất sẵn có của bạn.</p>
+                        </div>
+                     </div>
+                 </div>
+            </section>
+            
+            <section id="usp" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-center mb-2 text-[#118AB2]">Tại Sao Nên Chọn Nội Thất Lương Sơn?</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Thương hiệu không chỉ cung cấp sản phẩm chất lượng mà còn mang đến những giá trị độc đáo, tập trung vào sự hài lòng của khách hàng.</p>
+                <div class="chart-container">
+                    <canvas id="uspChart"></canvas>
+                </div>
+            </section>
+
+        </main>
+        
+        <div class="text-center mt-12">
+            <a href="https://noithatluongson.com.vn/ban-lam-viec-di-dong/" target="_blank" rel="noopener noreferrer" class="bg-[#118AB2] text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-[#0e7694] transition-colors duration-300">
+                Xem Toàn Bộ Sản Phẩm Tại Lương Sơn
+            </a>
+        </div>
+
+        <footer class="text-center mt-12 py-6 border-t border-gray-200">
+            <p class="text-gray-600">&copy; 2025 Infographic được tạo bởi chuyên gia Trí tuệ Nhân tạo.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const tooltipTitleCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const wrapLabel = (label) => {
+                if (label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const colors = {
+                red: '#FF6B6B',
+                yellow: '#FFD166',
+                green: '#06D6A0',
+                blue: '#118AB2',
+                navy: '#073B4C'
+            };
+            
+            const productTypesCtx = document.getElementById('productTypesChart').getContext('2d');
+            const productTypesLabels = ['Theo Thiết Kế Chân', 'Tối Ưu Công Năng', 'Linh Hoạt Cao (Gấp Gọn, Điều Chỉnh)'].map(wrapLabel);
+            new Chart(productTypesCtx, {
+                type: 'bar',
+                data: {
+                    labels: productTypesLabels,
+                    datasets: [{
+                        label: 'Mức độ đa dạng sản phẩm',
+                        data: [7, 9, 6],
+                        backgroundColor: [colors.blue, colors.green, colors.yellow],
+                        borderColor: [colors.blue, colors.green, colors.yellow],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...tooltipTitleCallback,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            const desktopMaterialCtx = document.getElementById('desktopMaterialChart').getContext('2d');
+            new Chart(desktopMaterialCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Gỗ công nghiệp (MDF, HDF)', 'Lớp phủ Melamine'],
+                    datasets: [{
+                        data: [85, 15],
+                        backgroundColor: [colors.navy, colors.yellow],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    ...tooltipTitleCallback,
+                    maintainAspectRatio: false,
+                    plugins: {
+                         ...tooltipTitleCallback.plugins,
+                         legend: {
+                            position: 'bottom',
+                        }
+                    }
+                }
+            });
+
+            const frameMaterialCtx = document.getElementById('frameMaterialChart').getContext('2d');
+            new Chart(frameMaterialCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Sắt chịu lực', 'Lớp sơn tĩnh điện'],
+                    datasets: [{
+                        data: [90, 10],
+                        backgroundColor: [colors.blue, colors.green],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    ...tooltipTitleCallback,
+                    maintainAspectRatio: false,
+                    plugins: {
+                         ...tooltipTitleCallback.plugins,
+                         legend: {
+                            position: 'bottom',
+                        }
+                    }
+                }
+            });
+
+            const uspCtx = document.getElementById('uspChart').getContext('2d');
+            new Chart(uspCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Giá Cả Cạnh Tranh', 'Tư Vấn Chuyên Nghiệp', 'Thiết Kế Theo Yêu Cầu'],
+                    datasets: [{
+                        label: 'Lợi thế của Nội thất Lương Sơn',
+                        data: [9, 8, 7],
+                        fill: true,
+                        backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                        borderColor: colors.red,
+                        pointBackgroundColor: colors.red,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: colors.red
+                    }]
+                },
+                options: {
+                    ...tooltipTitleCallback,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 13
+                                }
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
+
